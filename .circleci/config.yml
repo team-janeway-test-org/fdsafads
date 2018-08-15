@@ -2,6 +2,6 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/clojure:latest
+      - image: circleci/ruby:2.4.1-jessie
     steps:
-      - run: echo "hello world"
+      - run: echo "A first hello"
