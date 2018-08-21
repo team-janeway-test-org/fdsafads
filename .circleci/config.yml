@@ -1,7 +1,18 @@
 version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: echo "hello world"
+
+workflows:
+  version: 2
+  build-for-gh-universe:
+    jobs:
+      build:
+        docker:
+          - image: circleci/clojure:latest
+        steps:
+          - run: echo "hello world"
+  present-at-gh-universe:
+    jobs:
+      present:
+        docker:
+          - image: circleci/clojure:latest
+        steps:
+          - run: echo "hello world"
