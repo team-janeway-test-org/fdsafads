@@ -30,4 +30,5 @@ workflows:
       - test
   security_scan:
     jobs:
+      - build
       - scan
