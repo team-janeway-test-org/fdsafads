@@ -46,4 +46,8 @@ Tue Aug 21 17:10:11 EDT 2018
 Wed Aug 22 08:17:01 EDT 2018
 Wed Aug 22 09:59:38 EDT 2018
 Wed Aug 22 11:40:35 EDT 2018
+<<<<<<< HEAD
 Mon Aug 27 16:38:04 EDT 2018
+=======
+
+>>>>>>> 26e6de98ed20dd7807ceaf6035a8f32e4587434c
