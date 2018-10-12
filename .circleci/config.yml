@@ -2,13 +2,6 @@ version: 2
 jobs:
   build:
     docker:
-      - image:
-    steps:
-      - run: echo "hello world"
-version: 2
-jobs:
-  build:
-    docker:
       - image: circleci/clojure:latest
     steps:
       - run: echo "build"
