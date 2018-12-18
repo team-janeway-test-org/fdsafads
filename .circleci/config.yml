@@ -1,34 +1,24 @@
+# features/contexts
 version: 2
 jobs:
-  build:
+  test-context:
     docker:
-      - image:
+      - image: "circleci/clojure:latest"
     steps:
-      - run: echo "hello world"
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: echo "build"
-  test:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: exit $(($RANDOM%2))
-  scan:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: echo "test"
+      - run:
+          name: Check for context variable
+          command: |
+            if [[ -n "${CONTEXT_SMOKE_TEST_RESULT}" ]]; then
+              echo "Context is present."
+              exit 0
+            else
+              echo "Context variable not present!"
+              exit 1
+            fi
+
 workflows:
   version: 2
-  build_and_test:
+  my-workflow:
     jobs:
-      - build
-      - test
-  security_scan:
-    jobs:
-      - build
-      - scan
+      - test-context:
+          context: smoke-test
