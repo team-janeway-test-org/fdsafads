@@ -1,34 +1,8 @@
-version: 2
+# features/2.1
+version: 2.1
 jobs:
   build:
     docker:
-      - image:
+      - image: "circleci/clojure:latest"
     steps:
-      - run: echo "hello world"
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: echo "build"
-  test:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: exit $(($RANDOM%2))
-  scan:
-    docker:
-      - image: circleci/clojure:latest
-    steps:
-      - run: echo "test"
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
-  security_scan:
-    jobs:
-      - build
-      - scan
+      - run: exit 0
